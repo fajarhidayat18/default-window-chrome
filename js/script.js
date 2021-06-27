@@ -39,3 +39,15 @@ btn.addEventListener('click', function(){
     // app.classList.contains('light') ? app.classList.remove('light') & app.classList.add('dark') :app.classList.remove('dark') & app.classList.add('light');
     
 })
+
+// battery
+let bar = document.querySelector('.percen');
+navigator.getBattery().then(function(e){
+    bar.style.width = e.level * 100 + '%';
+    setInterval(()=>{
+    })
+    setInterval(()=>{
+        !e.charging ? bar.innerHTML = `<span class="persentasi">${e.level * 100 + '%'}</span>`: bar.innerHTML = `<span class="persentasi charg"></span>`;
+    })
+    
+})

@@ -1,47 +1,39 @@
-@mixin shadow {
-    box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.05),
-                15px 15px 15px rgba(0, 0, 0, 0.3), 
-                inset 15px 15px 20px rgba(0, 0, 0, 0.3), 
-                inset -15px -15px 20px rgba(255, 255, 255, 0.05);
-    border: 4px solid $bacol;
-}
-
-$primary : #393E46;
-$second:#00ADB5;
-$third:#AAD8D3;
-$bacol:#EEEEEE;
-
-$dark-primary : #FFC045;
-$dark-second:#0A91AB;
-$dark-third:#065471;
-$dark-bacol:#0C2233;
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import 'components/mixin';
+@import 'components/variableXurl';
 
 .dark {
     .calender{
         background-color: $dark-bacol;
         transition: 1s;
-    }
-    .dycalendar-header{
-        background-color:  $dark-third;
-        color: $dark-primary;
-        .dycalendar-prev-next-btn{
-            background-color: $dark-second;
-        }
-    }
-    .dycalendar-body{
-        td{
+        .dycalendar-header{
+            background-color:  $dark-third;
             color: $dark-primary;
+            .dycalendar-prev-next-btn{
+                background-color: $dark-second;
+            }
         }
-        td:hover{
-            background-color: $dark-primary;
-            color: $dark-third;
+        .dycalendar-body{
+            td{
+                color: $dark-primary;
+            }
+            td:hover{
+                background-color: $dark-primary;
+                color: $dark-third;
+            }
+            .dycalendar-target-date{
+                background-color: $dark-primary;
+                color: $dark-second;
+            }
         }
-        .dycalendar-target-date{
-            background-color: $dark-primary;
-            color: $dark-second;
+    }
+    .battery{
+        transition: 1s;
+        border: 2px solid $dark-primary;
+        .percen{
+            background-color: $dark-second;
+            .persentasi{
+                color: $dark-primary;
+            }
         }
     }
     .hr::before{background-color: $dark-primary;}
@@ -55,24 +47,34 @@ $dark-bacol:#0C2233;
     .calender{
         background-color: $bacol;
         transition: 1s;
+        .dycalendar-header{
+            background-color:  $third;
+            .dycalendar-prev-next-btn{
+                background-color: $second;
+            }
+        }
+        .dycalendar-body{
+            td{
+                color: $primary;
+            }
+            td:hover{
+                background-color: $primary;
+                color: $third;
+            }
+            .dycalendar-target-date{
+                background-color: $primary;
+                color: $second;
+            }
+        }
     }
-    .dycalendar-header{
-        background-color:  $third;
-        .dycalendar-prev-next-btn{
+    .battery{
+        transition: 1s;
+        border: 2px solid $primary;
+        .percen{
             background-color: $second;
-        }
-    }
-    .dycalendar-body{
-        td{
-            color: $primary;
-        }
-        td:hover{
-            background-color: $primary;
-            color: $third;
-        }
-        .dycalendar-target-date{
-            background-color: $primary;
-            color: $second;
+            .persentasi{
+                color: $primary;
+            }
         }
     }
     .hr::before{background-color: $primary;}
@@ -117,6 +119,7 @@ section.best{
         justify-content: space-between;
         flex-direction: column;
         align-items: center;
+        // jam
         .wrapper-clock{
             width: 150px;
             height: 150px;
@@ -204,6 +207,64 @@ section.best{
                 }
             }
         }
+
+        // battery
+        .battery-wrapper{
+            width: auto;
+            height: auto;
+            display: flex;
+            .battery{
+                width: 9rem;
+                height: 5rem;
+                right: 0;
+                left: 0;
+                border-radius: 15px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0.5em;
+                &::before{
+                    content: '';
+                    height: 1em;
+                    width: 3px;
+                    display: block;
+                    right: -6px;
+                    // align-items: center;
+                    position: absolute;
+                    background-color: #000;
+                    border-radius: 5px;
+                }
+                .level{
+                    position: absolute;
+                    border-radius: 13px;
+                    top: 4px;
+                    right: 4px;
+                    left: 4px;
+                    bottom: 4px;
+                    overflow: hidden;
+                    .percen{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50%;
+                        height: 100%;
+                        // height: fit-content;
+                        .persentasi{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            &.charg::before{
+                                content: url('/assets/thunder.svg');
+                                vertical-align: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         // btn mode
         .wrapping-btn{
             width: 3em;

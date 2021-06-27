@@ -12,27 +12,41 @@
   transition: 1s;
 }
 
-.dark .dycalendar-header {
+.dark .calender .dycalendar-header {
   background-color: #065471;
   color: #FFC045;
 }
 
-.dark .dycalendar-header .dycalendar-prev-next-btn {
+.dark .calender .dycalendar-header .dycalendar-prev-next-btn {
   background-color: #0A91AB;
 }
 
-.dark .dycalendar-body td {
+.dark .calender .dycalendar-body td {
   color: #FFC045;
 }
 
-.dark .dycalendar-body td:hover {
+.dark .calender .dycalendar-body td:hover {
   background-color: #FFC045;
   color: #065471;
 }
 
-.dark .dycalendar-body .dycalendar-target-date {
+.dark .calender .dycalendar-body .dycalendar-target-date {
   background-color: #FFC045;
   color: #0A91AB;
+}
+
+.dark .battery {
+  -webkit-transition: 1s;
+  transition: 1s;
+  border: 2px solid #FFC045;
+}
+
+.dark .battery .percen {
+  background-color: #0A91AB;
+}
+
+.dark .battery .percen .persentasi {
+  color: #FFC045;
 }
 
 .dark .hr::before {
@@ -60,26 +74,40 @@
   transition: 1s;
 }
 
-.light .dycalendar-header {
+.light .calender .dycalendar-header {
   background-color: #AAD8D3;
 }
 
-.light .dycalendar-header .dycalendar-prev-next-btn {
+.light .calender .dycalendar-header .dycalendar-prev-next-btn {
   background-color: #00ADB5;
 }
 
-.light .dycalendar-body td {
+.light .calender .dycalendar-body td {
   color: #393E46;
 }
 
-.light .dycalendar-body td:hover {
+.light .calender .dycalendar-body td:hover {
   background-color: #393E46;
   color: #AAD8D3;
 }
 
-.light .dycalendar-body .dycalendar-target-date {
+.light .calender .dycalendar-body .dycalendar-target-date {
   background-color: #393E46;
   color: #00ADB5;
+}
+
+.light .battery {
+  -webkit-transition: 1s;
+  transition: 1s;
+  border: 2px solid #393E46;
+}
+
+.light .battery .percen {
+  background-color: #00ADB5;
+}
+
+.light .battery .percen .persentasi {
+  color: #393E46;
 }
 
 .light .hr::before {
@@ -266,6 +294,80 @@ section.best {
   height: 70%;
   z-index: 12;
   border-radius: 6px;
+}
+
+.container-time .container-clock .battery-wrapper {
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container-time .container-clock .battery-wrapper .battery {
+  width: 9rem;
+  height: 5rem;
+  right: 0;
+  left: 0;
+  border-radius: 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+}
+
+.container-time .container-clock .battery-wrapper .battery::before {
+  content: '';
+  height: 1em;
+  width: 3px;
+  display: block;
+  right: -6px;
+  position: absolute;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+.container-time .container-clock .battery-wrapper .battery .level {
+  position: absolute;
+  border-radius: 13px;
+  top: 4px;
+  right: 4px;
+  left: 4px;
+  bottom: 4px;
+  overflow: hidden;
+}
+
+.container-time .container-clock .battery-wrapper .battery .level .percen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.container-time .container-clock .battery-wrapper .battery .level .percen .persentasi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.container-time .container-clock .battery-wrapper .battery .level .percen .persentasi.charg::before {
+  content: url("/assets/thunder.svg");
+  vertical-align: auto;
 }
 
 .container-time .container-clock .wrapping-btn {
