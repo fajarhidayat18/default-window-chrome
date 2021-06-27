@@ -1,0 +1,10 @@
+{
+    "name": "Wn custom page",
+    "description": "Overrides the new tab ",
+    "version": "0.1",
+    "incognito": "split",
+    "chrome_url_overrides": {
+      "newtab": "index.html"
+    },
+    "manifest_version": 2
+  }
