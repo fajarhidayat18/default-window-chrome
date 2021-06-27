@@ -36,6 +36,9 @@
             }
         }
     }
+    .motive .header-text .typewrite > .wrap:after {
+        color: $dark-primary;
+    }
     .hr::before{background-color: $dark-primary;}
     .mn::before{background-color: $dark-second;}
     .sc::before{background-color: $dark-third;}
@@ -348,11 +351,36 @@ section.best{
         align-items: center;
         justify-content: center;
     }
+
     .motive{
         position: absolute;
         bottom: 2rem;
         left: 10rem;
         transform: translateX(8rem) translateY(-4rem);
+        .header-text {
+            font-family: "Poppins";
+            font-weight: 500;
+        }
+        
+        .typewrite > .wrap {
+            position: relative;
+            font-weight: 300;
+        }
+        
+        .typewrite > .wrap:after {
+            content: "?";
+            color: $primary;
+            font-weight: 500;
+            
+            position: absolute;
+            animation: blinkerText 1s linear infinite;
+        }
+        
+        @keyframes blinkerText {
+            50% {
+                opacity: 0;
+            }
+        }
     }
     .bg-wrapper{
         position: relative;

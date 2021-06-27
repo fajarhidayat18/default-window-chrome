@@ -49,6 +49,10 @@
   color: #FFC045;
 }
 
+.dark .motive .header-text .typewrite > .wrap:after {
+  color: #FFC045;
+}
+
 .dark .hr::before {
   background-color: #FFC045;
 }
@@ -499,6 +503,37 @@ section.best {
   left: 10rem;
   -webkit-transform: translateX(8rem) translateY(-4rem);
           transform: translateX(8rem) translateY(-4rem);
+}
+
+.wrapper .motive .header-text {
+  font-family: "Poppins";
+  font-weight: 500;
+}
+
+.wrapper .motive .typewrite > .wrap {
+  position: relative;
+  font-weight: 300;
+}
+
+.wrapper .motive .typewrite > .wrap:after {
+  content: "?";
+  color: #393E46;
+  font-weight: 500;
+  position: absolute;
+  -webkit-animation: blinkerText 1s linear infinite;
+          animation: blinkerText 1s linear infinite;
+}
+
+@-webkit-keyframes blinkerText {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinkerText {
+  50% {
+    opacity: 0;
+  }
 }
 
 .wrapper .bg-wrapper {
